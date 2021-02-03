@@ -1,19 +1,58 @@
-import React from 'react';
-import { View, Text, FlatList, StyleSheet } from "react-native"
-import Header from "../components/Header"
-import TabBar from "../components/TabBar"
+import React, { Component } from 'react';
+import { View, FlatList, StyleSheet } from "react-native";
+import Header from "../components/Header";
+import TabBar from "../components/TabBar";
+import Article from "../components/Article"
+import {getNews} from '../utils/news';
 
-function NewsScreen(props) {
+
+export default class NewsScreen extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            articles: [],
+            refreshing: true
+        };
+        this.fetchNews = this.fetchNews.bind(this)
+    }
+
+    componentDidMount() {
+        this.fetchNews();
+    }
+
+    fetchNews() {
+        getNews()
+            .then(articles => this.setState({ articles, refreshing: false}))
+            .catch(() => this.setState({ refreshing: false }));
+    }
+
+    handleRefresh() {
+        this.setState(
+            {
+                refreshing: true
+            },
+            () => this.fetchNews()
+        )
+    }
+
+
+    render(){
     return (
         <View style={styles.container}>
             <Header/>
             <View style={styles.content}>
-                <Text>Hello World!</Text>
+                <FlatList
+                    data = {this.state.articles}
+                    renderItem = {({ item }) => <Article article={item} />}
+                    keyExtractor = {item => item.url}
+                    refreshing = {this.state.refreshing}
+                    onRefresh = {this.handleRefresh.bind(this)}
+                />
             </View>
             <TabBar/>
         </View> 
     );
-}
+}}
 
 const styles = StyleSheet.create({
     container: {
@@ -28,4 +67,3 @@ const styles = StyleSheet.create({
     }
 })
 
-export default NewsScreen;

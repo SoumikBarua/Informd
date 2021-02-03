@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Button } from 'react-native'
 
 function TabBar(props) {
     return (
         <View style={styles.container}>
-            <Text>button1</Text>
-            <Text>button2</Text>
-            <Text>button3</Text>
+            <Button title="Button 1" color="white"/>
+            <Button title="Button 2" color="white"/>
+            <Button title="Button 3" color="white"/>
         </View>
     );
 }
@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'darkslateblue',
         flexDirection: 'row',
         justifyContent: 'space-around',
-        flex: .10
+        alignItems: 'center',
+        flex: .10,
     }
 })
 

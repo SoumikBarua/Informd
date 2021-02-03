@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet } from "react-native"
 import Header from "../components/Header"
+import TabBar from "../components/TabBar"
 
 function NewsScreen(props) {
     return (
@@ -9,6 +10,7 @@ function NewsScreen(props) {
             <View style={styles.content}>
                 <Text>Hello World!</Text>
             </View>
+            <TabBar/>
         </View> 
     );
 }
@@ -21,7 +23,7 @@ const styles = StyleSheet.create({
     content: {
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 1,
+        flex: .90,
         backgroundColor: 'white',
     }
 })

@@ -12,9 +12,6 @@ function Header(props) {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'darkslateblue',
-    },
     header: {
         backgroundColor: 'darkslateblue',
     },

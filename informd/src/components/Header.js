@@ -1,12 +1,10 @@
 import React from 'react';
-import { Text, StyleSheet, SafeAreaView } from 'react-native'
+import { Text, StyleSheet, SafeAreaView} from 'react-native'
 
 function Header(props) {
     return (
         <SafeAreaView style={styles.header}>
-            <SafeAreaView>
-                <Text style={styles.text}>Informd</Text>
-            </SafeAreaView>
+            <Text style={styles.text}>Informd</Text>
         </SafeAreaView>
     );
 }

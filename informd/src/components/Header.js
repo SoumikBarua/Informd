@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text, StyleSheet, SafeAreaView} from 'react-native'
 
+import colors from '../config/colors'
+
 function Header(props) {
     return (
         <SafeAreaView style={styles.header}>
@@ -11,7 +13,7 @@ function Header(props) {
 
 const styles = StyleSheet.create({
     header: {
-        backgroundColor: 'darkslateblue',
+        backgroundColor: colors.primary,
     },
     text: {
         color: 'white',

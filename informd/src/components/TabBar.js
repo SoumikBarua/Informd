@@ -4,6 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import NewsScreen from '../screens/NewsScreen';
 import SearchScreen from '../screens/SearchScreen';
 
+import colors from '../config/colors'
+
 function TabBar(props) {
     const Tab = createBottomTabNavigator();
 
@@ -11,7 +13,7 @@ function TabBar(props) {
         <NavigationContainer>
             <Tab.Navigator tabBarOptions={{
                 style: {
-                    backgroundColor: 'darkslateblue',
+                    backgroundColor: colors.primary,
                 }
             }}>
                 <Tab.Screen name="News" component={NewsScreen}/>

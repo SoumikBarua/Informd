@@ -1,10 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import './src/screens/NewsScreen'
-import NewsScreen from './src/screens/NewsScreen';
+import { View, StyleSheet } from 'react-native'
+import TabBar from './src/components/TabBar';
+import Header from './src/components/Header';
 
 export default function App() {
   return (
-      <NewsScreen/>
+    <View style={styles.container}>
+      <Header/>
+      <TabBar/>
+    </View>  
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+      flex: 1,
+      backgroundColor: 'white',
+  }
+})

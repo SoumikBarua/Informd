@@ -1,24 +1,24 @@
 import React from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import NewsScreen from '../screens/NewsScreen';
+import SearchScreen from '../screens/SearchScreen';
 
 function TabBar(props) {
-    return (
-        <View style={styles.container}>
-            <Button title="Button 1" color="white"/>
-            <Button title="Button 2" color="white"/>
-            <Button title="Button 3" color="white"/>
-        </View>
-    );
-}
+    const Tab = createBottomTabNavigator();
 
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: 'darkslateblue',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        flex: .10,
-    }
-})
+    return(
+        <NavigationContainer>
+            <Tab.Navigator tabBarOptions={{
+                style: {
+                    backgroundColor: 'darkslateblue',
+                }
+            }}>
+                <Tab.Screen name="News" component={NewsScreen}/>
+                <Tab.Screen name="Search" component={SearchScreen}/>
+            </Tab.Navigator>
+        </NavigationContainer>
+    )
+}
 
 export default TabBar;

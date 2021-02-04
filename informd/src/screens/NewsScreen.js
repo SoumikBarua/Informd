@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { View, FlatList, StyleSheet } from "react-native";
-import Header from "../components/Header";
-import TabBar from "../components/TabBar";
 import Article from "../components/Article"
 import {getNews} from '../utils/news';
 
@@ -9,6 +7,8 @@ import {getNews} from '../utils/news';
 export default class NewsScreen extends Component {
     constructor(props) {
         super(props);
+
+        // Class properties
         this.state = {
             articles: [],
             refreshing: true
@@ -16,6 +16,7 @@ export default class NewsScreen extends Component {
         this.fetchNews = this.fetchNews.bind(this)
     }
 
+    // This method will run automatically if this screen is active
     componentDidMount() {
         this.fetchNews();
     }
@@ -39,30 +40,22 @@ export default class NewsScreen extends Component {
     render(){
     return (
         <View style={styles.container}>
-            <Header/>
-            <View style={styles.content}>
-                <FlatList
-                    data = {this.state.articles}
-                    renderItem = {({ item }) => <Article article={item} />}
-                    keyExtractor = {item => item.url}
-                    refreshing = {this.state.refreshing}
-                    onRefresh = {this.handleRefresh.bind(this)}
-                />
-            </View>
-            <TabBar/>
-        </View> 
+            <FlatList
+                data = {this.state.articles}
+                renderItem = {({ item }) => <Article article={item} />}
+                keyExtractor = {item => item.url}
+                refreshing = {this.state.refreshing}
+                onRefresh = {this.handleRefresh.bind(this)}
+            />
+        </View>
     );
 }}
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: 'white',
-    },
-    content: {
         alignItems: 'center',
         justifyContent: 'center',
-        flex: .90,
+        flex: 1,
         backgroundColor: 'white',
     }
 })

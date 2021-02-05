@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, FlatList, StyleSheet } from "react-native";
+import { View, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import Article from "../components/Article"
 import {getNews} from '../utils/news';
 
@@ -36,13 +36,21 @@ export default class NewsScreen extends Component {
         )
     }
 
+    // Open to ArticleDetailScreen and displays selected article data
+    navStack = (item) => {
+        this.props.navigation.navigate('Article', {article: item})
+    }
+
 
     render(){
     return (
         <View style={styles.container}>
             <FlatList
                 data = {this.state.articles}
-                renderItem = {({ item }) => <Article article={item} />}
+                renderItem = {({ item }) => 
+                <TouchableOpacity onPress={() => this.navStack(item) }>
+                    <Article article={item} />
+                </TouchableOpacity>}
                 keyExtractor = {item => item.url}
                 refreshing = {this.state.refreshing}
                 onRefresh = {this.handleRefresh.bind(this)}

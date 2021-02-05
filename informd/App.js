@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native';
 import TabBar from './src/components/TabBar';
 import Header from './src/components/Header';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import NewsScreen from '../screens/NewsScreen';
+import NewsStackScreen from '../screens/NewsStackScreen';
 import SearchScreen from '../screens/SearchScreen';
 
 import colors from '../config/colors'
@@ -16,7 +16,7 @@ function TabBar(props) {
                     backgroundColor: colors.primary,
                 }
             }}>
-                <Tab.Screen name="News" component={NewsScreen}/>
+                <Tab.Screen name="News" component={NewsStackScreen}/>
                 <Tab.Screen name="Search" component={SearchScreen}/>
             </Tab.Navigator>
         </NavigationContainer>

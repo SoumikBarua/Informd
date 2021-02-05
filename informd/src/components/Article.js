@@ -1,21 +1,24 @@
-import React from 'react';
-import { View, Text } from 'react-native'
+import React, {Component} from 'react';
+import { View, Text, TouchableOpacity } from 'react-native'
+import { Card } from 'react-native-elements'
 
-export default class Article extends React.Component {
+export default class Article extends Component {
     render() {
         const {
             title,
+            author,
             description,
+            url,
             urlToImage
         } = this.props.article;
 
+
         return(
-            <View>
-                <Text>{title}</Text>
+            <Card containerStyle={{borderRadius:10}}>
+                <Card.Image source={{uri: urlToImage}} containerStyle={{}} />
+                <Card.Title>{title}</Card.Title>
                 <Text>{description}</Text>
-                <Text>{urlToImage}</Text>
-                <Text></Text>
-            </View>
+            </Card>
         )
     }
 }

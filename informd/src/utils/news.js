@@ -1,4 +1,4 @@
-const endpoint = "https://newsapi.org/v2/top-headlines?country=us";
+const endpoint = "https://newsapi.org/v2/top-headlines?country=us&pageSize=50";
 const apikey = "&apiKey=";
 export async function getNews(category) {
     var url = "";

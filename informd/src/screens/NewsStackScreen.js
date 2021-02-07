@@ -1,7 +1,5 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import NewsScreen from './NewsScreen'
 import ArticleDetailScreen from './ArticleDetailScreen'
 
 import DrawerMenu from '../components/DrawerMenu'

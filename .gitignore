@@ -10,6 +10,7 @@ npm-debug.*
 web-build/
 node_modules/
 .expo/
+.env
 
 # macOS
 .DS_Store

@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import NewsStackScreen from '../screens/NewsStackScreen';
-import SearchScreen from '../screens/SearchScreen';
+import SearchStackScreen from '../screens/SearchStackScreen';
 
 import colors from '../config/colors'
 
@@ -30,7 +30,7 @@ function TabBar(props) {
                     }
                 })}>
                 <Tab.Screen name="News" component={NewsStackScreen}/>
-                <Tab.Screen name="Search" component={SearchScreen}/>
+                <Tab.Screen name="Search" component={SearchStackScreen}/>
             </Tab.Navigator>
         </NavigationContainer>
     )

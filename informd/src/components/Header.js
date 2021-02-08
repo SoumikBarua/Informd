@@ -1,26 +1,17 @@
 import React from 'react';
-import { Text, StyleSheet, SafeAreaView} from 'react-native'
+import { Header } from 'react-native-elements'
 
 import colors from '../config/colors'
 
-function Header(props) {
+function ReactHeader(props) {
     return (
-        <SafeAreaView style={styles.header}>
-            <Text style={styles.text}>Informd</Text>
-        </SafeAreaView>
+        <Header
+            centerComponent= {{ text: "Informd", style: {color: 'white', fontSize: 35} }}
+            containerStyle= {{
+                backgroundColor: colors.primary
+            }}
+        />
     );
 }
 
-const styles = StyleSheet.create({
-    header: {
-        backgroundColor: colors.primary,
-    },
-    text: {
-        color: 'white',
-        fontSize: 35,
-        fontWeight: 'bold',
-        textAlign: 'center',
-    }
-})
-
-export default Header;
+export default ReactHeader;

@@ -22,7 +22,8 @@ export default class NewsScreen extends Component {
     }
 
     fetchNews() {
-        getNews()
+        const category = this.props.route.params !== undefined ? this.props.route.params.category : "default";
+        getNews(category)
             .then(articles => this.setState({ articles, refreshing: false}))
             .catch(() => this.setState({ refreshing: false }));
     }
@@ -43,6 +44,7 @@ export default class NewsScreen extends Component {
 
 
     render(){
+        
     return (
         <View style={styles.container}>
             <FlatList

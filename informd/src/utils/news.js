@@ -13,3 +13,11 @@ export async function getNews(category) {
     let news = await fetch(url).then(response => response.json());
     return news.articles;
 }
+
+
+export async function searchNews(searchInput) {
+    var url = `https://newsapi.org/v2/everything?q=${searchInput}&pageSize=50` + apikey;
+
+    let news = await fetch(url).then(response => response.json());
+    return news.articles;
+}

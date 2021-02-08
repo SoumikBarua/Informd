@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import ArticleDetailScreen from './ArticleDetailScreen'
+import ArticleDetailScreen from './ArticleDetailScreen';
 
 import DrawerMenu from '../components/DrawerMenu'
 

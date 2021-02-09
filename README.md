@@ -16,7 +16,7 @@ This purpose of this project is to learn about React Native and how it is used t
 
 ## Tools we used
 
-We built it using VS Code. We also used the Expo platform to run the app, on simulator and physical devices. Git was our version control system and GitHub was our team collaboration tool.
+We built it using VS Code. We also used the Expo platform to run the app, on simulator and physical devices. We also used Canva/Figma. Git was our version control system and GitHub was our team collaboration tool.
 
 
 ## Challenges we ran into
